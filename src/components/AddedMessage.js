@@ -1,3 +1,5 @@
+import { closeModal } from "../common";
+
 const template = document.createElement("template");
 template.innerHTML = `
 <style>
@@ -13,19 +15,12 @@ template.innerHTML = `
   font-weight: 700;
 }
 
-.continueBrowse {
-  font-weight: 700;
-  background-color: white;
-  padding: 18px;
-  cursor: pointer;
-}
-
 </style>
 
 <div class="container">
   <p class="message">商品已加入您的購物車</p>
   <button is="submit-button">前往結賬</button>
-  <button class="continueBrowse">繼續購物</button>
+  <button is="normal-button" class="continue-purchase">繼續購物</button>
 </div>
 
 `;
@@ -38,6 +33,16 @@ class AddedMessage extends HTMLElement {
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
+
+  connectedCallback() {
+    this.shadowRoot
+      .querySelector(".continue-purchase")
+      .addEventListener("click", () => closeModal());
+  }
+
+  disconnectedCallback() {
+    this.shadowRoot.querySelector(".continue-purchase").removeEventListener();
   }
 }
 

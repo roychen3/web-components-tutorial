@@ -6,7 +6,7 @@ class SundrugProductInfo extends ProductInfo {
   }
 
   addToCart() {
-    document.querySelector('div[slot="modalContent"]').innerHTML =
+    document.querySelector('div[slot="modal-content"]').innerHTML =
       "<purchase-questionnaire />";
   }
 }

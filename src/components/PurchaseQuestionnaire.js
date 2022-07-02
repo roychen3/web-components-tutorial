@@ -50,7 +50,7 @@ class PurchaseQuestionnaire extends HTMLElement {
 
   addToCart() {
     console.log("add product to cart...");
-    document.querySelector('div[slot="modalContent"]').innerHTML =
+    document.querySelector('div[slot="modal-content"]').innerHTML =
       "<added-message />";
   }
 

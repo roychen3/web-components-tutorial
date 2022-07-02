@@ -1,14 +1,16 @@
+import { closeModal } from "../common";
+
 const template = document.createElement("template");
 template.innerHTML = `
 <style>
-.modalShell {
+.modal-shell {
   width: 60%;
   margin: 0 auto;
   border-radius: 9px;
   border: solid 2px black;
 }
 
-.modalHeader {
+.modal-header {
   display: flex;
   justify-content: end;
   border-bottom: solid 2px black;
@@ -16,19 +18,20 @@ template.innerHTML = `
 
 .close {
   padding: 9px;
+  cursor: pointer;
 }
 
-.modalContent{
+.modal-content{
   padding: 9px;
 }
 </style>
 
-<div class="modalShell">
-  <div class="modalHeader">
+<div class="modal-shell">
+  <div class="modal-header">
     <span class="close">X</span>
   </div>
-  <div class="modalContent">
-    <slot name="modalContent" />
+  <div class="modal-content">
+    <slot name="modal-content" />
   </div>
 </div>
 `;
@@ -43,15 +46,10 @@ class ModalShell extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
-  closeModal() {
-    const modalShell = document.querySelector("modal-shell");
-    document.body.removeChild(modalShell);
-  }
-
   connectedCallback() {
     this.shadowRoot
       .querySelector(".close")
-      .addEventListener("click", () => this.closeModal());
+      .addEventListener("click", () => closeModal());
   }
 
   disconnectedCallback() {

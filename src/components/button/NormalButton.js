@@ -1,13 +1,14 @@
-class SubmitButton extends HTMLButtonElement {
+class NormalButton extends HTMLButtonElement {
   constructor() {
     self = super();
     self.style.cssText = `
         font-weight: 700;
-        background-color: aqua;
+        border-radius: 9px;
+        background-color: white;
         padding: 18px;
         cursor: pointer;
     `;
   }
 }
 
-export default SubmitButton;
+export default NormalButton;
