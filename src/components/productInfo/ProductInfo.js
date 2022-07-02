@@ -2,12 +2,6 @@ const template = document.createElement("template");
 template.innerHTML = `
 <style>
 
-.product-container {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
-}
-
 .product-image {
   max-width: 200px;
 }
@@ -19,16 +13,19 @@ template.innerHTML = `
 
 .product-price {
   font-weight: 700;
+  margin-bottom: 36px
+}
+
+.button-container {
+  text-align: center;
 }
 
 </style>
 
-<div class="product-container">
-  <div>
-    <img class="product-image" />
-    <p class="product-name"></p>
-    <p class="product-price"></p>
-  </div>
+<img class="product-image" />
+<p class="product-name"></p>
+<p class="product-price"></p>
+<div class="button-container">
   <button is="submit-button" class="add-to-cart">加入購物車</button>
 </div>
 `;

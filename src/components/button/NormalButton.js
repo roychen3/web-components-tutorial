@@ -5,7 +5,7 @@ class NormalButton extends HTMLButtonElement {
         font-weight: 700;
         border-radius: 9px;
         background-color: white;
-        padding: 18px;
+        padding: 9px 18px;
         cursor: pointer;
     `;
   }

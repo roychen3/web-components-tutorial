@@ -22,6 +22,25 @@ window.customElements.define("sundrug-productinfo", SundrugProductInfo);
 window.customElements.define("added-message", AddedMessage);
 window.customElements.define("purchase-questionnaire", PurchaseQuestionnaire);
 
+const updateProduct = () => {
+  const isModalOpen = !!document.querySelector("modal-shell");
+  if (!isModalOpen) return;
+
+  const sundrugProductinfo = document.querySelector("sundrug-productinfo");
+  sundrugProductinfo.setAttribute(
+    "product-image",
+    "https://ec.sundrug.co.jp/eccontents/img/commodity/shop/00000000/commodity/4987107614704_common.jpg?NoPhoto=true"
+  );
+  sundrugProductinfo.setAttribute(
+    "product-name",
+    "【指定第2類医薬品】プレコール持続性カプセル 36カプセル 【セルフメディケーション税制対象】"
+  );
+  sundrugProductinfo.setAttribute("product-price", "1,304");
+};
+document
+  .querySelector(".update-product")
+  .addEventListener("click", () => updateProduct());
+
 const openModal = () => {
   const isModalOpen = !!document.querySelector("modal-shell");
   if (isModalOpen) return;
@@ -47,5 +66,5 @@ const openModal = () => {
   document.body.appendChild(modalShell);
 };
 document
-  .querySelector(".openModal")
+  .querySelector(".open-modal")
   .addEventListener("click", () => openModal());
