@@ -41,6 +41,32 @@ document
   .querySelector(".update-product")
   .addEventListener("click", () => updateProduct());
 
+// default
+// const openModal = () => {
+//   const isModalOpen = !!document.querySelector("modal-shell");
+//   if (isModalOpen) return;
+
+//   const productInfo = document.createElement("product-info");
+//   productInfo.setAttribute(
+//     "product-image",
+//     "https://ec.sundrug.co.jp/eccontents/img/commodity/shop/00000000/commodity/4987306045156_common.jpg?NoPhoto=true"
+//   );
+//   productInfo.setAttribute(
+//     "product-name",
+//     "【指定第2類医薬品】パブロンゴールドA微粒 44包 【セルフメディケーション税制対象】"
+//   );
+//   productInfo.setAttribute("product-price", "1,508");
+
+//   const slot = document.createElement("div");
+//   slot.setAttribute("slot", "modal-content");
+//   slot.appendChild(productInfo);
+
+//   const modalShell = document.createElement("modal-shell");
+//   modalShell.appendChild(slot);
+
+//   document.body.appendChild(modalShell);
+// };
+// sundrugProductinfo
 const openModal = () => {
   const isModalOpen = !!document.querySelector("modal-shell");
   if (isModalOpen) return;

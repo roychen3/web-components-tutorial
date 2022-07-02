@@ -38,11 +38,13 @@ class AddedMessage extends HTMLElement {
   connectedCallback() {
     this.shadowRoot
       .querySelector(".continue-purchase")
-      .addEventListener("click", () => closeModal());
+      .addEventListener("click", closeModal);
   }
 
   disconnectedCallback() {
-    this.shadowRoot.querySelector(".continue-purchase").removeEventListener();
+    this.shadowRoot
+      .querySelector(".continue-purchase")
+      .removeEventListener("click", closeModal);
   }
 }
 

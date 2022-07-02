@@ -55,11 +55,13 @@ class ProductInfo extends HTMLElement {
   connectedCallback() {
     this.shadowRoot
       .querySelector(".add-to-cart")
-      .addEventListener("click", () => this.addToCart());
+      .addEventListener("click", this.addToCart);
   }
 
   disconnectedCallback() {
-    this.shadowRoot.querySelector(".add-to-cart").removeEventListener();
+    this.shadowRoot
+      .querySelector(".add-to-cart")
+      .removeEventListener("click", this.addToCart);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {

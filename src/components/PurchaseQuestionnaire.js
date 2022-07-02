@@ -53,7 +53,8 @@ class PurchaseQuestionnaire extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
-  addToCart() {
+  addToCart(event) {
+    event.preventDefault();
     console.log("add product to cart...");
     document.querySelector('div[slot="modal-content"]').innerHTML =
       "<added-message />";
@@ -62,16 +63,13 @@ class PurchaseQuestionnaire extends HTMLElement {
   connectedCallback() {
     this.shadowRoot
       .querySelector("form")
-      .addEventListener("submit", (event) => {
-        event.preventDefault();
-        this.addToCart();
-      });
+      .addEventListener("submit", this.addToCart);
   }
 
   disconnectedCallback() {
     this.shadowRoot
-      .querySelector("form[.questionnaire-form]")
-      .removeEventListener();
+      .querySelector("form")
+      .removeEventListener("submit", this.addToCart);
   }
 }
 

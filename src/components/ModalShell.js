@@ -4,10 +4,13 @@ const template = document.createElement("template");
 template.innerHTML = `
 <style>
 .modal-shell {
-  width: 60%;
-  margin: 0 auto;
+  width: 40%;
   border-radius: 9px;
   border: solid 2px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal-header {
@@ -49,11 +52,13 @@ class ModalShell extends HTMLElement {
   connectedCallback() {
     this.shadowRoot
       .querySelector(".close")
-      .addEventListener("click", () => closeModal());
+      .addEventListener("click", closeModal);
   }
 
   disconnectedCallback() {
-    this.shadowRoot.querySelector(".close").removeEventListener();
+    this.shadowRoot
+      .querySelector(".close")
+      .removeEventListener("click", closeModal);
   }
 }
 
