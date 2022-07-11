@@ -39,9 +39,9 @@ const updateProduct = () => {
   );
   sundrugProductInfo.setAttribute("product-price", "1,304");
 };
-document
-  .querySelector(".update-product")
-  .addEventListener("click", () => updateProduct());
+// document
+//   .querySelector(".update-product")
+//   .addEventListener("click", () => updateProduct());
 
 const openModal = () => {
   const isModalOpen = !!document.querySelector("modal-shell");

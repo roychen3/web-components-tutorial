@@ -33,9 +33,7 @@ template.innerHTML = `
 class ProductInfo extends HTMLElement {
   constructor() {
     super();
-
-    this.showInfo = true;
-
+    
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
