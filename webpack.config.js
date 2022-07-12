@@ -13,4 +13,8 @@ module.exports = {
     plugins: [new HtmlWebpackPlugin({
         template: "./src/template.html"
     })],
+    output: {
+        filename: '[name].[contenthash].js',
+        clean: true,
+    },
 }

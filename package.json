@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js --watch",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://roychen3.github.io/web-components-tutorial",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "^2.6.0"
+    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "gh-pages": "^4.0.0"
   },
   "devDependencies": {
     "html-loader": "^3.1.2",

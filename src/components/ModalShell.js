@@ -4,13 +4,19 @@ const template = document.createElement("template");
 template.innerHTML = `
 <style>
 .modal-shell {
-  width: 40%;
+  width: 95%;
   border-radius: 9px;
   border: solid 2px black;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media (min-width: 992px) {
+  .modal-shell {
+    width: 40%;
+  }
 }
 
 .modal-header {
@@ -24,9 +30,10 @@ template.innerHTML = `
   cursor: pointer;
 }
 
-.modal-content{
+.modal-content {
   padding: 9px;
 }
+
 </style>
 
 <div class="modal-shell">

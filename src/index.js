@@ -39,9 +39,9 @@ const updateProduct = () => {
   );
   sundrugProductInfo.setAttribute("product-price", "1,304");
 };
-// document
-//   .querySelector(".update-product")
-//   .addEventListener("click", () => updateProduct());
+document
+  .querySelector(".update-product")
+  .addEventListener("click", () => updateProduct());
 
 const openModal = () => {
   const isModalOpen = !!document.querySelector("modal-shell");
@@ -49,10 +49,10 @@ const openModal = () => {
 
   const sundrugProductInfo = document.createElement("product-info-get-set");
   // override
-  // sundrugProductInfo.addToCart = () => {
-  //   document.querySelector('div[slot="modal-content"]').innerHTML =
-  //     "<purchase-questionnaire />";
-  // }
+  sundrugProductInfo.addToCart = () => {
+    document.querySelector('div[slot="modal-content"]').innerHTML =
+      "<purchase-questionnaire />";
+  }
   sundrugProductInfo.setAttribute(
     "product-image",
     "https://ec.sundrug.co.jp/eccontents/img/commodity/shop/00000000/commodity/4987306045156_common.jpg?NoPhoto=true"
